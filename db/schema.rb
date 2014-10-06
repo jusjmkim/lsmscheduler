@@ -11,13 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005212114) do
+ActiveRecord::Schema.define(version: 20141006020803) do
+
+  create_table "course_schedules", id: false, force: true do |t|
+    t.integer "course_id",   null: false
+    t.integer "schedule_id", null: false
+  end
+
+  add_index "course_schedules", ["course_id", "schedule_id"], name: "index_course_schedules_on_course_id_and_schedule_id"
+  add_index "course_schedules", ["schedule_id", "course_id"], name: "index_course_schedules_on_schedule_id_and_course_id"
 
   create_table "courses", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "major_requirements", id: false, force: true do |t|
+    t.integer "major_id",       null: false
+    t.integer "requirement_id", null: false
+  end
+
+  add_index "major_requirements", ["major_id", "requirement_id"], name: "index_major_requirements_on_major_id_and_requirement_id"
+  add_index "major_requirements", ["requirement_id", "major_id"], name: "index_major_requirements_on_requirement_id_and_major_id"
+
+  create_table "major_students", id: false, force: true do |t|
+    t.integer "major_id",   null: false
+    t.integer "student_id", null: false
+  end
+
+  add_index "major_students", ["major_id", "student_id"], name: "index_major_students_on_major_id_and_student_id"
+  add_index "major_students", ["student_id", "major_id"], name: "index_major_students_on_student_id_and_major_id"
 
   create_table "majors", force: true do |t|
     t.string   "name"
@@ -33,9 +57,18 @@ ActiveRecord::Schema.define(version: 20141005212114) do
 
   create_table "schedules", force: true do |t|
     t.string   "name"
+    t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "schedules_students", id: false, force: true do |t|
+    t.integer "student_id",  null: false
+    t.integer "schedule_id", null: false
+  end
+
+  add_index "schedules_students", ["schedule_id", "student_id"], name: "index_schedules_students_on_schedule_id_and_student_id"
+  add_index "schedules_students", ["student_id", "schedule_id"], name: "index_schedules_students_on_student_id_and_schedule_id"
 
   create_table "students", force: true do |t|
     t.string   "username"

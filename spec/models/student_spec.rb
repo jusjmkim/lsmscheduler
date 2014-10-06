@@ -3,15 +3,20 @@ require 'rails_helper'
 RSpec.describe Student, :type => :model do
   
   context 'Student Validation' do
-    before do
-      @student = Student.create(username: 'Justin', password: 'password')
-    end
-
-    it 'student is valid' do
+    it 'is valid' do
       expect(@student).to be_valid
     end
 
-    it 'student has schedules' do
+    it 'has many schedules' do
+      expect(@student.schedules).to include(@schedule)
+    end
+
+    it 'has many courses' do
+      expect(@student.courses).to include(@course)
+    end
+
+    it 'has many majors' do
+      expect(@student.majors).to include(@major)
     end
   end
 

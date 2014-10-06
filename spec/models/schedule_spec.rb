@@ -1,5 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Schedule, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  context 'Schedule Validation' do
+    it 'is valid' do
+      expect(@schedule).to be_valid
+    end
+
+    it 'has many courses' do
+      expect(@schedule.courses).to include(@course)
+    end
+
+    it 'belongs to a student' do
+      expect(@schedule.student).to eq(@student)
+    end
+  end
+
 end

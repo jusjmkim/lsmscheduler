@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Major, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'Major Validation' do
+    it 'is valid' do
+      expect(@major).to be_valid
+    end
+
+    it 'has many requirements' do
+      expect(@major.requirements).to include(@requirement)
+    end
+  end
 end
