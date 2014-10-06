@@ -45,7 +45,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    @student = Student.create(username: 'Justin', password: 'password')
+    @student = Student.create(username: 'Justin', encrypted_password: 'password')
     @schedule = @student.schedules.build(name: 'test_schedule', student_id: @student.id)
     @course = @schedule.courses.build(name: 'biol121')
     @major = @student.majors.build(name: 'biology')
