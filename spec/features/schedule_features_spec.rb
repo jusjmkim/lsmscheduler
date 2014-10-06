@@ -1,4 +1,4 @@
-require_relative '../rails_helper.rb'
+require 'feature_helper'
 
 RSpec.describe 'Feature Test: Schedule Setup', type: :feature do
 

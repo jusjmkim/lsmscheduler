@@ -1,11 +1,13 @@
-require_relative '../rails_helper.rb'
+require 'feature_helper'
 
 RSpec.describe 'Feature Test: User Signup', type: :feature do
 
+  before do
+    visit '/'
+  end
+
   describe 'page renders correctly' do
-    before do
-      visit '/'
-    end
+    visit '/'
 
     context 'check headers' do
       it 'has top header' do
@@ -25,6 +27,20 @@ RSpec.describe 'Feature Test: User Signup', type: :feature do
       it 'has password field' do
         expect(page).to have_content('Password')
       end
+    end
+  end
+
+  describe 'logging in' do
+    visit '/'
+
+    # Student.create(username: 'Justin', password: 'password')
+
+    # fill_in('username', with: 'Justin')
+    # fill_in('password', with: 'password')
+    click_button('log-in')
+
+    it 'logs in' do
+      expect(current_path).to eq('/schedules')
     end
   end
 
