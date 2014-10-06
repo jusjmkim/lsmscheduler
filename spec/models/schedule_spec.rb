@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Schedule, :type => :model do
 
-  context 'Schedule Validation' do
+  describe 'Schedule Validation' do
     it 'is valid' do
       expect(@schedule).to be_valid
     end

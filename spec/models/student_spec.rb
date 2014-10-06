@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Student, :type => :model do
   
-  context 'Student Validation' do
+  describe 'Student Validation' do
     it 'is valid' do
       expect(@student).to be_valid
     end
