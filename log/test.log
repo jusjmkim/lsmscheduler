@@ -3016,3 +3016,287 @@ Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:02:57.812895"], ["password", "password"], ["updated_at", "2014-10-06 03:02:57.812895"], ["username", "Justin"]]
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (15.7ms)[0m  DELETE FROM "course_schedules";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'course_schedules';
+  [1m[36m (14.0ms)[0m  [1mDELETE FROM "courses";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'courses';[0m
+  [1m[35m (13.9ms)[0m  DELETE FROM "major_requirements";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'major_requirements';
+  [1m[36m (14.7ms)[0m  [1mDELETE FROM "major_students";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'major_students';[0m
+  [1m[35m (13.8ms)[0m  DELETE FROM "majors";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'majors';
+  [1m[36m (14.3ms)[0m  [1mDELETE FROM "requirements";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'requirements';[0m
+  [1m[35m (14.2ms)[0m  DELETE FROM "schedules";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'schedules';
+  [1m[36m (14.7ms)[0m  [1mDELETE FROM "schedules_students";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'schedules_students';[0m
+  [1m[35m (13.6ms)[0m  DELETE FROM "students";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'students';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.816306"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.816306"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-05 23:14:14 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.911306"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.911306"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-05 23:14:14 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.919413"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.919413"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.924710"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.924710"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.929245"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.929245"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.933166"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.933166"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.936866"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.936866"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.942925"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.942925"], ["username", "Justin"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.950141"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.950141"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.954037"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.954037"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.957910"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.957910"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.961439"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.961439"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.964938"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.964938"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.969661"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.969661"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.977245"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.977245"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:14.983120"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.983120"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:14.987007"], ["password", "password"], ["updated_at", "2014-10-06 03:14:14.987007"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:15.023427"], ["password", "password"], ["updated_at", "2014-10-06 03:14:15.023427"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSchedule Load (0.1ms)[0m  SELECT "schedules".* FROM "schedules"  WHERE "schedules"."student_id" = ?  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:15.028492"], ["password", "password"], ["updated_at", "2014-10-06 03:14:15.028492"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMajorStudent Load (0.1ms)[0m  SELECT "major_students".* FROM "major_students"  WHERE "major_students"."student_id" = ?  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:15.032393"], ["password", "password"], ["updated_at", "2014-10-06 03:14:15.032393"], ["username", "Justin"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:15.040010"], ["password", "password"], ["updated_at", "2014-10-06 03:14:15.040010"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (10.3ms)[0m  DELETE FROM "course_schedules";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'course_schedules';
+  [1m[36m (9.8ms)[0m  [1mDELETE FROM "courses";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'courses';[0m
+  [1m[35m (9.5ms)[0m  DELETE FROM "major_requirements";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'major_requirements';
+  [1m[36m (9.3ms)[0m  [1mDELETE FROM "major_students";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'major_students';[0m
+  [1m[35m (12.2ms)[0m  DELETE FROM "majors";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'majors';
+  [1m[36m (8.5ms)[0m  [1mDELETE FROM "requirements";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'requirements';[0m
+  [1m[35m (15.2ms)[0m  DELETE FROM "schedules";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'schedules';
+  [1m[36m (9.9ms)[0m  [1mDELETE FROM "schedules_students";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'schedules_students';[0m
+  [1m[35m (8.6ms)[0m  DELETE FROM "students";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'students';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:44.929360"], ["password", "password"], ["updated_at", "2014-10-06 03:14:44.929360"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:44.977809"], ["password", "password"], ["updated_at", "2014-10-06 03:14:44.977809"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:44.982980"], ["password", "password"], ["updated_at", "2014-10-06 03:14:44.982980"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:44.992504"], ["password", "password"], ["updated_at", "2014-10-06 03:14:44.992504"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:44.996322"], ["password", "password"], ["updated_at", "2014-10-06 03:14:44.996322"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.000109"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.000109"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.003858"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.003858"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.008151"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.008151"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.011861"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.011861"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.022686"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.022686"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.026600"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.026600"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.029976"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.029976"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.033725"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.033725"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.037722"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.037722"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.041188"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.041188"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.049808"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.049808"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMajorStudent Load (0.1ms)[0m  SELECT "major_students".* FROM "major_students"  WHERE "major_students"."student_id" = ?  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.054981"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.054981"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.058450"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.058450"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.061716"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.061716"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSchedule Load (0.1ms)[0m  SELECT "schedules".* FROM "schedules"  WHERE "schedules"."student_id" = ?  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-06 03:14:45.066709"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.066709"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-05 23:14:45 -0400
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-06 03:14:45.095003"], ["password", "password"], ["updated_at", "2014-10-06 03:14:45.095003"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-05 23:14:45 -0400
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

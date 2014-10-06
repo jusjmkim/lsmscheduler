@@ -8,11 +8,11 @@ RSpec.describe 'Feature Test: User Signup', type: :feature do
     end
 
     it 'has username field' do
-      expect(page).to have_content('username')
+      expect(page).to have_content('Username')
     end
 
     it 'has password field' do
-      expect(page).to have_content('password')
+      expect(page).to have_content('Password')
     end
   end
 
