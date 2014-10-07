@@ -2,12 +2,10 @@ require 'feature_helper'
 
 RSpec.describe 'Feature Test: User Signup', type: :feature do
 
-  before do
-    visit '/'
-  end
-
   describe 'page renders correctly' do
-    visit '/'
+    before do
+      visit '/'
+    end
 
     context 'check headers' do
       it 'has top header' do
@@ -31,16 +29,27 @@ RSpec.describe 'Feature Test: User Signup', type: :feature do
   end
 
   describe 'logging in' do
+    before do
+      visit '/'
+      
+      Student.create(username: 'Justin', password: 'password')
+
+      fill_in('username', with: 'Justin')
+      fill_in('password', with: 'password')
+
+      click_button('log-in')
+    end
+
     visit '/'
 
-    # Student.create(username: 'Justin', password: 'password')
+    context 'checks login' do
+      it 'logs in' do
+        expect(current_path).to eq('/schedules')
+      end
 
-    # fill_in('username', with: 'Justin')
-    # fill_in('password', with: 'password')
-    click_button('log-in')
-
-    it 'logs in' do
-      expect(current_path).to eq('/schedules')
+      it 'renders page correctly' do
+        expect(page).to have_content('create page')
+      end
     end
   end
 
