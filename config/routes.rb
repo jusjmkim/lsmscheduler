@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :schedules
+  resources :students do
+    resources :schedules
+  end
 
 end
