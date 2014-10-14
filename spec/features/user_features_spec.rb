@@ -44,7 +44,7 @@ RSpec.describe 'Feature Test: User Signup', type: :feature do
 
     context 'checks login' do
       it 'logs in' do
-        expect(current_path).to eq('/schedules')
+        expect(current_path).to eq('/students/1/schedules')
       end
 
       it 'renders page correctly' do

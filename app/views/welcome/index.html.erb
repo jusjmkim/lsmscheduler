@@ -1,7 +1,7 @@
 <h1>LSM Scheduler</h1>
 
 <h2>Log In</h2>
-<%= form_tag '/schedules', method: 'POST' do %>
+<%= form_tag @schedule, method: 'POST' do %>
   <%= label_tag(:username, 'Username: ') %>
   <%= text_field_tag(:username) %>
 

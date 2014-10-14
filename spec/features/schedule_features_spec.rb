@@ -2,10 +2,12 @@ require 'feature_helper'
 
 RSpec.describe 'Feature Test: Schedule Setup', type: :feature do
 
-  # describe 'page renders correctly' do
-  #   before do
-  #     visit '/schedules'
-  #   end
-  # end
+  before do
+    visit '/students/1/schedules'
+  end
+
+  it 'goes to correct page' do
+    expect(current_path).to eq('/students/1/schedules')    
+  end
 
 end
