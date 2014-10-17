@@ -2,44 +2,55 @@ require 'rails_helper'
 
 RSpec.describe SchedulesController, :type => :controller do
   describe 'index' do
-    it 'is successful' do
+    before do
+      visit '/students/1/schedules'
+    end
+
+    it 'is valid' do
       expect(response.status).to eq(200)
     end
   end
 
   describe 'new' do
-    it 'is successful' do
+    before do
+      visit '/students/1/schedules/new'
+    end
+
+    it 'is valid' do
       expect(response.status).to eq(200)
     end
   end
 
   describe 'create' do
-    it 'is successful' do
-      expect(response.status).to eq(200)
-    end
+ 
   end
 
   describe 'show' do
-    it 'is successful' do
+    before do
+      visit '/students/1/schedules/1'
+    end
+
+    it 'is valid' do
       expect(response.status).to eq(200)
     end
   end
 
   describe 'edit' do
-    it 'is successful' do
+    before do
+      visit '/students/1/schedules/1/edit'
+    end
+
+    it 'is valid' do
       expect(response.status).to eq(200)
     end
   end
 
   describe 'update' do
-    it 'is successful' do
-      expect(response.status).to eq(200)
-    end
+
   end
 
   describe 'destroy' do
-    it 'is successful' do
-      expect(response.status).to eq(200)
-    end
+
   end
+
 end

@@ -12593,3 +12593,1158 @@ Processing by WelcomeController#index as HTML
   Rendered layouts/_login_notice.html.erb (0.2ms)
 Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (14.4ms)[0m  DELETE FROM "course_schedules";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'course_schedules';
+  [1m[36m (10.4ms)[0m  [1mDELETE FROM "courses";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'courses';[0m
+  [1m[35m (12.5ms)[0m  DELETE FROM "major_requirements";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'major_requirements';
+  [1m[36m (8.7ms)[0m  [1mDELETE FROM "major_students";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'major_students';[0m
+  [1m[35m (10.7ms)[0m  DELETE FROM "majors";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'majors';
+  [1m[36m (10.5ms)[0m  [1mDELETE FROM "requirements";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'requirements';[0m
+  [1m[35m (9.7ms)[0m  DELETE FROM "schedules";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'schedules';
+  [1m[36m (10.4ms)[0m  [1mDELETE FROM "schedules_students";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'schedules_students';[0m
+  [1m[35m (10.3ms)[0m  DELETE FROM "students";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'students';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.436619"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.436619"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMajorStudent Load (0.1ms)[0m  [1mSELECT "major_students".* FROM "major_students"  WHERE "major_students"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.474244"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.474244"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.477721"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.477721"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.480711"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.480711"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSchedule Load (0.1ms)[0m  [1mSELECT "schedules".* FROM "schedules"  WHERE "schedules"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.485808"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.485808"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.489731"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.489731"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.493040"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.493040"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.497143"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.497143"], ["username", "Justin"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_login_notice.html.erb (7.1ms)
+Completed 200 OK in 24ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.530623"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.530623"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started POST "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by SchedulesController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Justin", "password"=>"[FILTERED]", "commit"=>"Log In", "student_id"=>"1"}
+  Rendered schedules/create.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.541514"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.541514"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.547886"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.547886"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started POST "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by SchedulesController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Justin", "password"=>"[FILTERED]", "commit"=>"Log In", "student_id"=>"1"}
+  Rendered schedules/create.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.555629"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.555629"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_login_notice.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.563583"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.563583"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.571218"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.571218"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_login_notice.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.609605"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.609605"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.617597"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.617597"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  Rendered schedules/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.625790"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.625790"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.629159"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.629159"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.632348"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.632348"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.635959"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.635959"], ["username", "Justin"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  Rendered schedules/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.647418"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.647418"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules/1" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by SchedulesController#show as HTML
+  Parameters: {"student_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 4ms
+
+ActionView::MissingTemplate - Missing template schedules/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "#<RSpec::Rails::ViewRendering::EmptyTemplatePathSetDecorator:0x00000004a25f90>"
+:
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (4.1.0) lib/airbrake/rails/middleware.rb:13:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:16:in `_call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:12:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/builder.rb:138:in `call'
+  rack (1.5.2) lib/rack/urlmap.rb:65:in `block in call'
+  rack (1.5.2) lib/rack/urlmap.rb:50:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack-test (0.6.2) lib/rack/mock_session.rb:30:in `request'
+  rack-test (0.6.2) lib/rack/test.rb:230:in `process_request'
+  rack-test (0.6.2) lib/rack/test.rb:57:in `get'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/forwardable.rb:183:in `get'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:60:in `process'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:21:in `visit'
+  capybara (2.4.3) lib/capybara/rack_test/driver.rb:42:in `visit'
+  capybara (2.4.3) lib/capybara/session.rb:227:in `visit'
+  capybara (2.4.3) lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  spec/controllers/schedules_controller_spec.rb:30:in `block (3 levels) in <top (required)>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:350:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:367:in `run_before_example'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:150:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/example/controller_example_group.rb:179:in `block (2 levels) in <module:ControllerExampleGroup>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/adapters.rb:72:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:447:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:330:in `with_around_example_hooks'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:148:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:500:in `block in run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:496:in `run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:463:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block (2 levels) in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/reporter.rb:53:in `report'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:107:in `run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:85:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:69:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:37:in `invoke'
+  rspec-core (3.1.4) exe/rspec:4:in `<top (required)>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/rspec:23:in `<main>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.664984"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.664984"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules/1/edit" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+Processing by SchedulesController#edit as HTML
+  Parameters: {"student_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms
+
+ActionView::MissingTemplate - Missing template schedules/edit, application/edit with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "#<RSpec::Rails::ViewRendering::EmptyTemplatePathSetDecorator:0x00000004514808>"
+:
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (4.1.0) lib/airbrake/rails/middleware.rb:13:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:16:in `_call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:12:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/builder.rb:138:in `call'
+  rack (1.5.2) lib/rack/urlmap.rb:65:in `block in call'
+  rack (1.5.2) lib/rack/urlmap.rb:50:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack-test (0.6.2) lib/rack/mock_session.rb:30:in `request'
+  rack-test (0.6.2) lib/rack/test.rb:230:in `process_request'
+  rack-test (0.6.2) lib/rack/test.rb:57:in `get'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/forwardable.rb:183:in `get'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:60:in `process'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:21:in `visit'
+  capybara (2.4.3) lib/capybara/rack_test/driver.rb:42:in `visit'
+  capybara (2.4.3) lib/capybara/session.rb:227:in `visit'
+  capybara (2.4.3) lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  spec/controllers/schedules_controller_spec.rb:40:in `block (3 levels) in <top (required)>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:350:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:367:in `run_before_example'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:150:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/example/controller_example_group.rb:179:in `block (2 levels) in <module:ControllerExampleGroup>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/adapters.rb:72:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:447:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:330:in `with_around_example_hooks'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:148:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:500:in `block in run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:496:in `run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:463:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block (2 levels) in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/reporter.rb:53:in `report'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:107:in `run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:85:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:69:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:37:in `invoke'
+  rspec-core (3.1.4) exe/rspec:4:in `<top (required)>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/rspec:23:in `<main>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.683719"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.683719"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules/1/new" for 127.0.0.1 at 2014-10-17 16:19:55 -0400
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.689486"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.689486"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:19:55.693099"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.693099"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:19:55.696739"], ["password", "password"], ["updated_at", "2014-10-17 20:19:55.696739"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (10.2ms)[0m  DELETE FROM "course_schedules";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'course_schedules';
+  [1m[36m (9.6ms)[0m  [1mDELETE FROM "courses";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'courses';[0m
+  [1m[35m (10.4ms)[0m  DELETE FROM "major_requirements";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'major_requirements';
+  [1m[36m (10.1ms)[0m  [1mDELETE FROM "major_students";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'major_students';[0m
+  [1m[35m (8.5ms)[0m  DELETE FROM "majors";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'majors';
+  [1m[36m (10.7ms)[0m  [1mDELETE FROM "requirements";[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'requirements';[0m
+  [1m[35m (10.6ms)[0m  DELETE FROM "schedules";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'schedules';
+  [1m[36m (9.4ms)[0m  [1mDELETE FROM "schedules_students";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'schedules_students';[0m
+  [1m[35m (9.2ms)[0m  DELETE FROM "students";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'students';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.228089"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.228089"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  Rendered schedules/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.277150"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.277150"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules/1/edit" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#edit as HTML
+  Parameters: {"student_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+ActionView::MissingTemplate - Missing template schedules/edit, application/edit with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "#<RSpec::Rails::ViewRendering::EmptyTemplatePathSetDecorator:0x0000000444cba0>"
+:
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (4.1.0) lib/airbrake/rails/middleware.rb:13:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:16:in `_call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:12:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/builder.rb:138:in `call'
+  rack (1.5.2) lib/rack/urlmap.rb:65:in `block in call'
+  rack (1.5.2) lib/rack/urlmap.rb:50:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack-test (0.6.2) lib/rack/mock_session.rb:30:in `request'
+  rack-test (0.6.2) lib/rack/test.rb:230:in `process_request'
+  rack-test (0.6.2) lib/rack/test.rb:57:in `get'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/forwardable.rb:183:in `get'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:60:in `process'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:21:in `visit'
+  capybara (2.4.3) lib/capybara/rack_test/driver.rb:42:in `visit'
+  capybara (2.4.3) lib/capybara/session.rb:227:in `visit'
+  capybara (2.4.3) lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  spec/controllers/schedules_controller_spec.rb:40:in `block (3 levels) in <top (required)>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:350:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:367:in `run_before_example'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:150:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/example/controller_example_group.rb:179:in `block (2 levels) in <module:ControllerExampleGroup>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/adapters.rb:72:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:447:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:330:in `with_around_example_hooks'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:148:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:500:in `block in run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:496:in `run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:463:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block (2 levels) in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/reporter.rb:53:in `report'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:107:in `run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:85:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:69:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:37:in `invoke'
+  rspec-core (3.1.4) exe/rspec:4:in `<top (required)>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/rspec:23:in `<main>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.293028"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.293028"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules/new" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#new as HTML
+  Parameters: {"student_id"=>"1"}
+Completed 500 Internal Server Error in 2ms
+
+ActionView::MissingTemplate - Missing template schedules/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "#<RSpec::Rails::ViewRendering::EmptyTemplatePathSetDecorator:0x00000003e86e50>"
+:
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (4.1.0) lib/airbrake/rails/middleware.rb:13:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:16:in `_call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:12:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/builder.rb:138:in `call'
+  rack (1.5.2) lib/rack/urlmap.rb:65:in `block in call'
+  rack (1.5.2) lib/rack/urlmap.rb:50:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack-test (0.6.2) lib/rack/mock_session.rb:30:in `request'
+  rack-test (0.6.2) lib/rack/test.rb:230:in `process_request'
+  rack-test (0.6.2) lib/rack/test.rb:57:in `get'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/forwardable.rb:183:in `get'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:60:in `process'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:21:in `visit'
+  capybara (2.4.3) lib/capybara/rack_test/driver.rb:42:in `visit'
+  capybara (2.4.3) lib/capybara/session.rb:227:in `visit'
+  capybara (2.4.3) lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  spec/controllers/schedules_controller_spec.rb:16:in `block (3 levels) in <top (required)>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:350:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:367:in `run_before_example'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:150:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/example/controller_example_group.rb:179:in `block (2 levels) in <module:ControllerExampleGroup>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/adapters.rb:72:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:447:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:330:in `with_around_example_hooks'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:148:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:500:in `block in run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:496:in `run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:463:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block (2 levels) in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/reporter.rb:53:in `report'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:107:in `run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:85:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:69:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:37:in `invoke'
+  rspec-core (3.1.4) exe/rspec:4:in `<top (required)>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/rspec:23:in `<main>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.311968"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.311968"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules/1" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#show as HTML
+  Parameters: {"student_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms
+
+ActionView::MissingTemplate - Missing template schedules/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "#<RSpec::Rails::ViewRendering::EmptyTemplatePathSetDecorator:0x00000002b45418>"
+:
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (4.1.0) lib/airbrake/rails/middleware.rb:13:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:16:in `_call'
+  airbrake (4.1.0) lib/airbrake/user_informer.rb:12:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/builder.rb:138:in `call'
+  rack (1.5.2) lib/rack/urlmap.rb:65:in `block in call'
+  rack (1.5.2) lib/rack/urlmap.rb:50:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack-test (0.6.2) lib/rack/mock_session.rb:30:in `request'
+  rack-test (0.6.2) lib/rack/test.rb:230:in `process_request'
+  rack-test (0.6.2) lib/rack/test.rb:57:in `get'
+  /home/justin/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/forwardable.rb:183:in `get'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:60:in `process'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  capybara (2.4.3) lib/capybara/rack_test/browser.rb:21:in `visit'
+  capybara (2.4.3) lib/capybara/rack_test/driver.rb:42:in `visit'
+  capybara (2.4.3) lib/capybara/session.rb:227:in `visit'
+  capybara (2.4.3) lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  spec/controllers/schedules_controller_spec.rb:30:in `block (3 levels) in <top (required)>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:350:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:427:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:367:in `run_before_example'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:150:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/example/controller_example_group.rb:179:in `block (2 levels) in <module:ControllerExampleGroup>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-rails (3.1.0) lib/rspec/rails/adapters.rb:72:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:321:in `instance_exec'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:380:in `execute_with'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:446:in `block (2 levels) in run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:221:in `call'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:447:in `run'
+  rspec-core (3.1.4) lib/rspec/core/hooks.rb:500:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:330:in `with_around_example_hooks'
+  rspec-core (3.1.4) lib/rspec/core/example.rb:148:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:500:in `block in run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:496:in `run_examples'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:463:in `run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `block in run'
+  rspec-core (3.1.4) lib/rspec/core/example_group.rb:464:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block (2 levels) in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:111:in `block in run_specs'
+  rspec-core (3.1.4) lib/rspec/core/reporter.rb:53:in `report'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:107:in `run_specs'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:85:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:69:in `run'
+  rspec-core (3.1.4) lib/rspec/core/runner.rb:37:in `invoke'
+  rspec-core (3.1.4) exe/rspec:4:in `<top (required)>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/rspec:23:in `<main>'
+   () home/justin/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.363036"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.363036"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.367070"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.367070"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.370709"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.370709"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.376211"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.376211"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.380427"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.380427"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  Rendered layouts/_login_notice.html.erb (7.1ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.410531"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.410531"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.418330"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.418330"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started POST "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Justin", "password"=>"[FILTERED]", "commit"=>"Log In", "student_id"=>"1"}
+  Rendered layouts/_login_notice.html.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.433097"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.433097"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.438966"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.438966"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started POST "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by SchedulesController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Justin", "password"=>"[FILTERED]", "commit"=>"Log In", "student_id"=>"1"}
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.446264"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.446264"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.454781"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.454781"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.466870"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.466870"], ["username", "Justin"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.474601"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.474601"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:20:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.482294"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.482294"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.488562"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.488562"], ["username", "Justin"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.494705"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.494705"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.498554"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.498554"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.502081"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.502081"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.506860"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.506860"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:20:23.510770"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.510770"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.514153"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.514153"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMajorStudent Load (0.1ms)[0m  [1mSELECT "major_students".* FROM "major_students"  WHERE "major_students"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:20:23.519497"], ["password", "password"], ["updated_at", "2014-10-17 20:20:23.519497"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSchedule Load (0.1ms)[0m  [1mSELECT "schedules".* FROM "schedules"  WHERE "schedules"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
