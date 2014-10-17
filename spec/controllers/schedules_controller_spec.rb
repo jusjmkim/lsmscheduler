@@ -35,16 +35,6 @@ RSpec.describe SchedulesController, :type => :controller do
     end
   end
 
-  describe 'edit' do
-    before do
-      visit '/students/1/schedules/1/edit'
-    end
-
-    it 'is valid' do
-      expect(response.status).to eq(200)
-    end
-  end
-
   describe 'update' do
 
   end
