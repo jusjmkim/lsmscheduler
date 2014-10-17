@@ -40,8 +40,6 @@ RSpec.describe 'Feature Test: User Signup', type: :feature do
       click_button('log-in')
     end
 
-    visit '/'
-
     context 'checks login' do
       it 'logs in' do
         expect(current_path).to eq('/students/1/schedules')
