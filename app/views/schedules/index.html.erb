@@ -1,6 +1,5 @@
 <h1>Your Schedules</h1>
 
-<h2>Freshman Fall</h2>
-
-<h2>Freshman Spring</h2>
-
+<%= @semesters.each do |semester| %>
+  <p><%= semester %></p>
+<% end %>

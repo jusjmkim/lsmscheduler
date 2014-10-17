@@ -16,4 +16,19 @@ RSpec.describe Schedule, :type => :model do
     end
   end
 
+  describe '#semesters' do
+    SEMESTERS = ['Freshman Fall', 'Freshman Spring',
+                'Sophomore Fall', 'Sophomore Spring',
+                'Junior Fall', 'Junior Spring',
+                'Senior Fall', 'Senior Spring']
+
+    it 'is valid' do
+      expect(Schedule.semesters).to_not be_nil
+    end
+
+    it 'returns all 8 semesters' do
+      expect(Schedule.semesters).to eq(SEMESTERS)
+    end
+  end
+
 end
