@@ -1,5 +1,7 @@
 <h1>Your Schedules</h1>
 
-<%= @semesters.each do |semester| %>
-  <p><%= semester %></p>
+<% @schedules.each do |schedule| %>
+
+  <%= render 'schedule_template' %>
+
 <% end %>

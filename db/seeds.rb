@@ -1,1 +1,5 @@
-Student.create(username: 'Justin', encrypted_password: 'password')
+@student = Student.create(username: 'Justin', password: 'password')
+@schedule = @student.schedules.create(name: 'Test Schedule', student_id: @student.id)
+@course = @schedule.courses.create(name: 'biol121')
+@major = @student.majors.create(name: 'biology')
+@requirement = @major.requirements.create(name: 'biol121')

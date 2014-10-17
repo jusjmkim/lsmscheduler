@@ -46,10 +46,10 @@ RSpec.configure do |config|
 
   config.before(:each) do
     @student = Student.create(username: 'Justin', password: 'password')
-    @schedule = @student.schedules.build(name: 'test_schedule', student_id: @student.id)
-    @course = @schedule.courses.build(name: 'biol121')
-    @major = @student.majors.build(name: 'biology')
-    @requirement = @major.requirements.build(name: 'biol121')
+    @schedule = @student.schedules.create(name: 'Test Schedule', student_id: @student.id)
+    @course = @schedule.courses.create(name: 'biol121')
+    @major = @student.majors.create(name: 'biology')
+    @requirement = @major.requirements.create(name: 'biol121')
   end
 
 # The settings below are suggested to provide a good initial experience
