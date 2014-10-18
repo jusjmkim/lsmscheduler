@@ -25122,3 +25122,703 @@ NoMethodError - undefined method `keys' for #<Schedule:0x000000028791a8>:
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (9.5ms)[0m  DELETE FROM "course_schedules";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'course_schedules';
+  [1m[36m (9.5ms)[0m  [1mDELETE FROM "courses";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'courses';[0m
+  [1m[35m (10.2ms)[0m  DELETE FROM "major_requirements";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'major_requirements';
+  [1m[36m (7.7ms)[0m  [1mDELETE FROM "major_students";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'major_students';[0m
+  [1m[35m (9.8ms)[0m  DELETE FROM "majors";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'majors';
+  [1m[36m (10.0ms)[0m  [1mDELETE FROM "requirements";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'requirements';[0m
+  [1m[35m (9.4ms)[0m  DELETE FROM "schedules";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'schedules';
+  [1m[36m (7.9ms)[0m  [1mDELETE FROM "schedules_students";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'schedules_students';[0m
+  [1m[35m (9.9ms)[0m  DELETE FROM "students";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'students';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.082057"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.082057"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.100753"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.100753"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.111382"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.111382"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.121063"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.121063"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.130269"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.130269"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.136760"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.136760"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.138374"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.138374"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.139737"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.139737"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.141881"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.141881"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.143962"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.143962"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.147391"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.147391"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.148767"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.148767"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.150156"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.150156"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.152259"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.152259"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.154365"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.154365"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.157776"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.157776"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.159949"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.159949"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.161535"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.161535"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.163942"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.163942"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.167193"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.167193"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRequirement Exists (0.1ms)[0m  SELECT  1 AS one FROM "requirements" INNER JOIN "major_requirements" ON "requirements"."id" = "major_requirements"."requirement_id" WHERE "major_requirements"."major_id" = ? AND "requirements"."id" = 1 LIMIT 1  [["major_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.178074"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.178074"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.179627"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.179627"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.180968"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.180968"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.183260"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.183260"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.185484"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.185484"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.189293"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.189293"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.191089"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.191089"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.192825"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.192825"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.198159"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.198159"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.200574"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.200574"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMajor Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "majors" INNER JOIN "major_students" ON "majors"."id" = "major_students"."major_id" WHERE "major_students"."student_id" = ? AND "majors"."id" = 1 LIMIT 1[0m  [["student_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.205563"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.205563"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.207084"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.207084"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.208443"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.208443"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.210576"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.210576"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.212618"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.212618"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCourse Exists (0.1ms)[0m  SELECT  1 AS one FROM "courses" INNER JOIN "course_schedules" ON "courses"."id" = "course_schedules"."course_id" INNER JOIN "schedules" ON "course_schedules"."schedule_id" = "schedules"."id" WHERE "schedules"."student_id" = ? AND "courses"."id" = 1 LIMIT 1  [["student_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.218660"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.218660"], ["username", "Justin"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.220802"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.220802"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.223325"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.223325"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.227963"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.227963"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.230179"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.230179"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSchedule Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "schedules"  WHERE "schedules"."student_id" = ? AND "schedules"."id" = 1 LIMIT 1[0m  [["student_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.235042"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.235042"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.236530"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.236530"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.237897"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.237897"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.239969"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.239969"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.242118"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.242118"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.245102"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.245102"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.246530"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.246530"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.248086"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.248086"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.286071"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.286071"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.288192"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.288192"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules/1" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#show as HTML
+  Parameters: {"student_id"=>"1", "id"=>"1"}
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.302009"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.302009"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.303558"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.303558"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.305028"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.305028"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.307665"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.307665"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.309831"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.309831"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.316420"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.316420"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.318165"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.318165"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.319547"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.319547"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.321710"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.321710"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.323780"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.323780"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules/new" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#new as HTML
+  Parameters: {"student_id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.330536"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.330536"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.332228"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.332228"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.333731"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.333731"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.339151"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.339151"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.341400"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.341400"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.343926"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.343926"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.345262"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.345262"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.346562"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.346562"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.348608"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.348608"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.350865"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.350865"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.353469"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.353469"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.354791"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.354791"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.356078"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.356078"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.358248"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.358248"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.360601"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.360601"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCourse Exists (0.1ms)[0m  SELECT  1 AS one FROM "courses" INNER JOIN "course_schedules" ON "courses"."id" = "course_schedules"."course_id" WHERE "course_schedules"."schedule_id" = ? AND "courses"."id" = 1 LIMIT 1  [["schedule_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.365016"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.365016"], ["username", "Justin"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.367909"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.367909"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.370043"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.370043"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.372345"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.372345"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.374506"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.374506"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.377010"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.377010"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.378429"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.378429"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.379721"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.379721"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.381800"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.381800"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.383983"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.383983"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.386772"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.386772"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.388134"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.388134"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.389601"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.389601"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.392089"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.392089"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.394680"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.394680"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[36mSchedule Load (0.1ms)[0m  [1mSELECT "schedules".* FROM "schedules"[0m
+  Rendered schedules/_schedule_template.html.erb (0.4ms)
+  Rendered layouts/_login_notice.html.erb (7.3ms)
+Completed 200 OK in 22ms (Views: 21.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.423259"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.423259"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.424794"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.424794"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.426186"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.426186"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.428265"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.428265"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.430422"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.430422"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[35mSchedule Load (0.1ms)[0m  SELECT "schedules".* FROM "schedules"
+  Rendered schedules/_schedule_template.html.erb (0.1ms)
+  Rendered layouts/_login_notice.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.437802"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.437802"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.439303"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.439303"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.440650"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.440650"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.442815"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.442815"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.444872"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.444872"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[36mSchedule Load (0.1ms)[0m  [1mSELECT "schedules".* FROM "schedules"[0m
+  Rendered schedules/_schedule_template.html.erb (0.1ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.454903"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.454903"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.458446"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.458446"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.459931"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.459931"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.462092"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.462092"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.464184"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.464184"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[35mSchedule Load (0.1ms)[0m  SELECT "schedules".* FROM "schedules"
+  Rendered schedules/_schedule_template.html.erb (0.1ms)
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.471802"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.471802"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.473322"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.473322"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.474656"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.474656"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.476803"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.476803"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.478976"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.478976"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#index as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[36mSchedule Load (0.1ms)[0m  [1mSELECT "schedules".* FROM "schedules"[0m
+  Rendered schedules/_schedule_template.html.erb (0.1ms)
+  Rendered layouts/_login_notice.html.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.491662"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.491662"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.493226"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.493226"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.494591"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.494591"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.496692"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.496692"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.498846"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.498846"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.501862"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.501862"], ["username", "Justin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.510356"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.510356"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.511926"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.511926"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.515173"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.515173"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.520762"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.520762"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.529725"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.529725"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.531227"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.531227"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.532564"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.532564"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.535346"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.535346"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.537579"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.537579"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.545593"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.545593"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.547087"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.547087"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.548411"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.548411"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.551755"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.551755"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.556623"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.556623"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.563609"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.563609"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.565062"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.565062"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.566660"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.566660"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.569132"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.569132"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.571687"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.571687"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.583516"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.583516"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.585085"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.585085"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.586477"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.586477"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)  [["course_id", 1], ["schedule_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.588548"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.588548"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)  [["major_id", 1], ["student_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.590648"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.590648"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)  [["major_id", 1], ["requirement_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.595220"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.595220"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started POST "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Justin", "password"=>"[FILTERED]", "commit"=>"Log In", "student_id"=>"1"}
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.605222"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.605222"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schedules" ("created_at", "name", "student_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-17 20:56:34.607284"], ["name", "Test Schedule"], ["student_id", 1], ["updated_at", "2014-10-17 20:56:34.607284"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.609620"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.609620"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "course_schedules" ("course_id", "schedule_id") VALUES (?, ?)[0m  [["course_id", 1], ["schedule_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "majors" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.613505"], ["name", "biology"], ["updated_at", "2014-10-17 20:56:34.613505"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_students" ("major_id", "student_id") VALUES (?, ?)[0m  [["major_id", 1], ["student_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "requirements" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-17 20:56:34.615894"], ["name", "biol121"], ["updated_at", "2014-10-17 20:56:34.615894"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "major_requirements" ("major_id", "requirement_id") VALUES (?, ?)[0m  [["major_id", 1], ["requirement_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-17 20:56:34.620929"], ["password", "password"], ["updated_at", "2014-10-17 20:56:34.620929"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/students/1/schedules" for 127.0.0.1 at 2014-10-17 16:56:34 -0400
+Processing by SchedulesController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Justin", "password"=>"[FILTERED]", "commit"=>"Log In", "student_id"=>"1"}
+  Rendered layouts/_login_notice.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
